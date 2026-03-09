@@ -128,7 +128,36 @@ jobs:
               value: "http://${{ github.actor }}-orders:5000"
             - name: INVENTORY_URL
               value: "http://${{ github.actor }}-inventory:3000"
-          # NOTE: OAuth detected — run 'kindling expose' for a public HTTPS URL
+            - name: AUTH0_DOMAIN
+              valueFrom:
+                secretKeyRef:
+                  name: kindling-secret-auth0-domain
+                  key: value
+            - name: AUTH0_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: kindling-secret-auth0-client-id
+                  key: value
+            - name: AUTH0_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: kindling-secret-auth0-client-secret
+                  key: value
+            - name: SESSION_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: kindling-secret-session-secret
+                  key: value
+            - name: PUBLIC_URL
+              valueFrom:
+                secretKeyRef:
+                  name: kindling-secret-public-url
+                  key: value
+            - name: STRIPE_WEBHOOK_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: kindling-secret-stripe-webhook-secret
+                  key: value
 
       - name: Deploy ui
         uses: kindling-sh/kindling/.github/actions/kindling-deploy@main

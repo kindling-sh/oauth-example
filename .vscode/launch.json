@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "connect": {
+        "host": "localhost",
+        "port": 5678
+      },
+      "justMyCode": false,
+      "name": "kindling: debug jeff-vincent-orders",
+      "pathMappings": [
+        {
+          "localRoot": "${workspaceFolder}/orders",
+          "remoteRoot": "/app"
+        }
+      ],
+      "preLaunchTask": "kindling: start debug jeff-vincent-orders",
+      "request": "attach",
+      "type": "debugpy"
+    },
+    {
+      "connect": {
+        "host": "localhost",
+        "port": 5678
+      },
+      "justMyCode": false,
+      "name": "kindling: attach jeff-vincent-orders",
+      "pathMappings": [
+        {
+          "localRoot": "${workspaceFolder}/orders",
+          "remoteRoot": "/app"
+        }
+      ],
+      "request": "attach",
+      "type": "debugpy"
+    }
+  ]
+}

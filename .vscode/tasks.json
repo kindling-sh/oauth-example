@@ -1,0 +1,42 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "command": "kindling debug -d jeff-vincent-orders --port 5678",
+      "isBackground": true,
+      "label": "kindling: start debug jeff-vincent-orders",
+      "presentation": {
+        "close": false,
+        "panel": "dedicated",
+        "reveal": "silent"
+      },
+      "problemMatcher": [
+        {
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "Detecting runtime",
+            "endsPattern": "Debugger ready"
+          },
+          "pattern": [
+            {
+              "file": 1,
+              "line": 2,
+              "message": 3,
+              "regexp": "^__never_match__$"
+            }
+          ]
+        }
+      ],
+      "type": "shell"
+    },
+    {
+      "command": "kindling debug --stop -d jeff-vincent-orders",
+      "label": "kindling: stop debug jeff-vincent-orders",
+      "presentation": {
+        "panel": "shared",
+        "reveal": "silent"
+      },
+      "type": "shell"
+    }
+  ]
+}
